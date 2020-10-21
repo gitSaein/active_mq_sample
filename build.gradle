@@ -20,7 +20,9 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-activemq'
+    implementation "org.apache.activemq:activemq-broker"
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'org.springframework', name: 'spring-jms', version: '5.2.8.RELEASE'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
