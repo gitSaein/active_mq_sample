@@ -19,7 +19,6 @@ public class Publisher {
     private String topic;
 
     public void sendEmailTopic(String email, String msg) {
-        // jmsTemplate.setPubSubDomain(true); // pubsub 설정시 ...
         jmsTemplate.convertAndSend(topic, new Email(email, msg));
     }
 }
