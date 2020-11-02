@@ -25,3 +25,5 @@ https://www.programmersought.com/article/8358250043/
 + 복구 지원
 + 신뢰성
 + 비동기 처리
++ 1:N : topics 
++ 1:1 : queue
