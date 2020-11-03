@@ -1,5 +1,6 @@
 package com.example.mqtt_message;
 
+import com.example.mqtt_message.dto.Email;
 import com.example.mqtt_message.queue.Producer;
 import com.example.mqtt_message.topic.Publisher;
 import org.junit.jupiter.api.Test;
@@ -26,8 +27,6 @@ class MqttMessageApplicationTests {
 
     @Test
     public void runSubscribe() {
-        publisher.sendEmailTopic("saeinin@kakao.com", "hi hello bye");
-        //subscriber.subscribe();
+        publisher.sendEmailTopic(new Email("saeinin@kakao.com", "hi hello bye"));
     }
-
 }

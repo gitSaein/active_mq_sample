@@ -2,7 +2,6 @@ package com.example.mqtt_message.topic;
 
 import com.example.mqtt_message.dto.Email;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
@@ -18,8 +17,9 @@ public class Publisher {
     @Value("${jsa.activemq.topic}")
     private String topic;
 
-    public void sendEmailTopic(String email, String msg) {
-        jmsTemplate.convertAndSend(topic, new Email(email, msg));
+    public void sendEmailTopic(Email email) {
+        jmsTemplate.convertAndSend(topic, email);
+        log.info("success send : " + email.getTo() + ": " + email.getBody());
     }
 }
 

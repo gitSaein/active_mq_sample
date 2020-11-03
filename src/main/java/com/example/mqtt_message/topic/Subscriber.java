@@ -12,6 +12,8 @@ public class Subscriber {
 
     @JmsListener(destination = "${jsa.activemq.topic}")
     public void receiveEmailTopic(Email email) {
-        log.info("Received: " + email.toString());
+        log.info("success Received: " + email.toString());
     }
 }
+
+
